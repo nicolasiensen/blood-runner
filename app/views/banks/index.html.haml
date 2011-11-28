@@ -1,0 +1,11 @@
+- @banks.each do |bank|
+  %div
+    %div= bank.name
+    %div= "O- #{bank.o_negative}%"
+    %div= "O+ #{bank.o_positive}%"
+    %div= "A- #{bank.a_negative}%"
+    %div= "B- #{bank.b_negative}%"
+    %div= "A+ #{bank.a_positive}%"
+    %div= "B+ #{bank.b_positive}%"
+    %div= "AB+ #{bank.ab_positive}%"
+    %div= "AB- #{bank.ab_negative}%"

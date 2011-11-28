@@ -17,6 +17,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'inherited_resources'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -33,4 +35,6 @@ group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'minitest'
+  gem 'cucumber-websteps'
+  gem 'machinist', '>= 2.0.0.beta2'
 end

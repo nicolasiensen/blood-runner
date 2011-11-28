@@ -11,6 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20111128033041) do
+
+  create_table "banks", :force => true do |t|
+    t.string   "name"
+    t.integer  "o_negative"
+    t.integer  "o_positive"
+    t.integer  "a_negative"
+    t.integer  "b_negative"
+    t.integer  "a_positive"
+    t.integer  "b_positive"
+    t.integer  "ab_negative"
+    t.integer  "ab_positive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
