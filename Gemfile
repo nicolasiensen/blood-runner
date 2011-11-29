@@ -20,7 +20,6 @@ end
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'haml'
-gem 'sass'
 gem "compass", "~> 0.12.alpha.0"
 
 # Use unicorn as the web server
