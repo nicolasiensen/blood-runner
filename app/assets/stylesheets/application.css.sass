@@ -1,0 +1,43 @@
+@import compass
+
+$red: #660000
+$brown: #662E00
+$purple: #52002E
+$green: #005200
+
+body
+  background: asset-url("square_bg.png", image)
+  font-family: 'Special Elite', cursive
+
+.bank
+  +box-shadow(black 0 0 10px)
+  +border-radius(10px)
+  +clearfix
+  margin-bottom: 20px
+  padding: 10px
+  .name
+    font-size: 1.3em
+    margin-bottom: 1em
+  .blood_bag
+    width: 20%
+    float: left
+    height: 5em
+    position: relative
+    margin-bottom: 1em
+    margin: 2.5%
+    .blood
+      background: $red
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      z-index: 1
+    .label
+      background: white
+      line-height: 1em
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+      font-size: .6em
+      font-family: "Arial"

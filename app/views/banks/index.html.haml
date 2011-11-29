@@ -1,11 +1,53 @@
-- @banks.each do |bank|
-  %div
-    %div= bank.name
-    %div= "O- #{bank.o_negative}%"
-    %div= "O+ #{bank.o_positive}%"
-    %div= "A- #{bank.a_negative}%"
-    %div= "B- #{bank.b_negative}%"
-    %div= "A+ #{bank.a_positive}%"
-    %div= "B+ #{bank.b_positive}%"
-    %div= "AB+ #{bank.ab_positive}%"
-    %div= "AB- #{bank.ab_negative}%"
+.container_12
+  - @banks.each do |bank|
+    .grid_4
+      .bank
+        .name= bank.name
+        .blood_bag
+          .label
+            O-
+            %br
+            = number_to_percentage(bank.o_negative, :precision => 0)
+          .blood{:style => "height:#{bank.o_negative}%"}
+        .blood_bag
+          .label
+            O+
+            %br
+            = number_to_percentage(bank.o_positive, :precision => 0)
+          .blood{:style => "height:#{bank.o_positive}%"}
+        .blood_bag
+          .label
+            A-
+            %br
+            = number_to_percentage(bank.a_negative, :precision => 0)
+          .blood{:style => "height:#{bank.a_negative}%"}
+        .blood_bag
+          .label
+            B-
+            %br
+            = number_to_percentage(bank.b_negative, :precision => 0)
+          .blood{:style => "height:#{bank.b_negative}%"}
+        .blood_bag
+          .label
+            A+
+            %br
+            = number_to_percentage(bank.a_positive, :precision => 0)
+          .blood{:style => "height:#{bank.a_positive}%"}
+        .blood_bag
+          .label
+            B+
+            %br
+            = number_to_percentage(bank.b_positive, :precision => 0)
+          .blood{:style => "height:#{bank.b_positive}%"}
+        .blood_bag
+          .label
+            AB+
+            %br
+            = number_to_percentage(bank.ab_positive, :precision => 0)
+          .blood{:style => "height:#{bank.ab_positive}%"}
+        .blood_bag
+          .label
+            AB-
+            %br
+            = number_to_percentage(bank.ab_negative, :precision => 0)
+          .blood{:style => "height:#{bank.ab_negative}%"}
