@@ -10,34 +10,36 @@ body
   font-family: 'Special Elite', cursive
 
 .bank
-  +box-shadow(black 0 0 10px)
+  +box-shadow(black 0 0 5px)
   +border-radius(10px)
   +clearfix
   margin-bottom: 20px
   padding: 10px
+  +linear-gradient(color-stops(lighten(#ccc, 20%), #ccc))
+  +text-shadow(white 0 1px 0)
   .name
     font-size: 1.3em
     margin-bottom: 1em
-  .blood_bag
-    width: 20%
-    float: left
-    height: 5em
-    position: relative
-    margin-bottom: 1em
-    margin: 2.5%
-    .blood
-      background: $red
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 100%
-      z-index: 1
-    .label
-      background: white
-      line-height: 1em
-      position: absolute
-      top: 0
-      left: 0
-      z-index: 2
-      font-size: .6em
-      font-family: "Arial"
+
+.ui-container
+  height: 20px
+  margin-bottom: 5px
+  float: right
+  width: 210px
+
+.ui-progress
+  height: 18px
+  +linear-gradient(color-stops($red, lighten($red, 50%)))
+  +box-shadow(inset 0px 1px 0px 0px lighten($red, 50%), inset 0px -1px 1px $red)
+  background-size: 18px 18px
+  border: 1px solid $red
+  //-webkit-gradient(linear, 0 0, 44 44, color-stop(0.00, rgba(255, 255, 255, 0.17)), color-stop(0.25, rgba(255, 255, 255, 0.17)), color-stop(0.26, rgba(255, 255, 255, 0)), color-stop(0.50, rgba(255, 255, 255, 0)), color-stop(0.51, rgba(255, 255, 255, 0.17)), color-stop(0.75, rgba(255, 255, 255, 0.17)), color-stop(0.76, rgba(255, 255, 255, 0)), color-stop(1.00, rgba(255, 255, 255, 0)) ), -webkit-gradient(linear, left bottom, left top, color-stop(0, #74D04C), color-stop(1, #9BDD62))
+
+.label
+  float: left
+  width: 60px
+  font-size: 0.8em
+  line-height: 23px
+
+.blood_bag
+  +clearfix

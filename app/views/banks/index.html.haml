@@ -3,51 +3,43 @@
     .grid_4
       .bank
         .name= bank.name
+
         .blood_bag
-          .label
-            O-
-            %br
-            = number_to_percentage(bank.o_negative, :precision => 0)
-          .blood{:style => "height:#{bank.o_negative}%"}
+          .label= "O- #{bank.o_negative}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.o_negative, 5].max}%"}
+
         .blood_bag
-          .label
-            O+
-            %br
-            = number_to_percentage(bank.o_positive, :precision => 0)
-          .blood{:style => "height:#{bank.o_positive}%"}
+          .label= "O+ #{bank.o_positive}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.o_positive, 5].max}%"}
+
         .blood_bag
-          .label
-            A-
-            %br
-            = number_to_percentage(bank.a_negative, :precision => 0)
-          .blood{:style => "height:#{bank.a_negative}%"}
+          .label= "A- #{bank.a_negative}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.a_negative, 5].max}%"}
+
         .blood_bag
-          .label
-            B-
-            %br
-            = number_to_percentage(bank.b_negative, :precision => 0)
-          .blood{:style => "height:#{bank.b_negative}%"}
+          .label= "B- #{bank.b_negative}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.b_negative, 5].max}%"}
+
         .blood_bag
-          .label
-            A+
-            %br
-            = number_to_percentage(bank.a_positive, :precision => 0)
-          .blood{:style => "height:#{bank.a_positive}%"}
+          .label= "A+ #{bank.a_positive}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.a_positive, 5].max}%"}
+
         .blood_bag
-          .label
-            B+
-            %br
-            = number_to_percentage(bank.b_positive, :precision => 0)
-          .blood{:style => "height:#{bank.b_positive}%"}
+          .label= "B+ #{bank.b_negative}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.b_positive, 5].max}%"}
+
         .blood_bag
-          .label
-            AB+
-            %br
-            = number_to_percentage(bank.ab_positive, :precision => 0)
-          .blood{:style => "height:#{bank.ab_positive}%"}
+          .label= "AB+ #{bank.ab_positive}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.ab_positive, 5].max}%"}
+
         .blood_bag
-          .label
-            AB-
-            %br
-            = number_to_percentage(bank.ab_negative, :precision => 0)
-          .blood{:style => "height:#{bank.ab_negative}%"}
+          .label= "AB- #{bank.ab_negative}%"
+          .ui-progress-bar.ui-container
+            .ui-progress{:style => "width:#{[bank.ab_negative, 5].max}%"}
