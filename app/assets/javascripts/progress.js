@@ -28,7 +28,7 @@
       $(this).animate({
         width: progress+'%'
       }, {
-        duration: 2000, 
+        duration: 1000, 
         
         // swing or linear
         easing: 'swing',
@@ -66,16 +66,8 @@
 })( jQuery );
 
 $(function() {
-  // Simulate some progress
-  /*$('.ui-progress').animateProgress(43, function() {
-    $(this).animateProgress(79, function() {
-      setTimeout(function() {
-        $('.ui-progress').animateProgress(100, function() {
-          $('#main_content').slideDown();
-          $('#fork_me').fadeIn();
-        });
-      }, 2000);
-    });
+  $.each($(".ui-progress"), function(index, e){
+    var x = parseInt($(this).data("progress"));
+    $(this).animateProgress(x);
   });
-  */
 });

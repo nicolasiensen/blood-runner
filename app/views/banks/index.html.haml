@@ -7,39 +7,39 @@
         .blood_bag
           .label= "O- #{bank.o_negative}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.o_negative, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.o_negative, 10].max}
 
         .blood_bag
           .label= "O+ #{bank.o_positive}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.o_positive, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.o_positive, 10].max}
 
         .blood_bag
           .label= "A- #{bank.a_negative}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.a_negative, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.a_negative, 10].max}
 
         .blood_bag
           .label= "B- #{bank.b_negative}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.b_negative, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.b_negative, 10].max}
 
         .blood_bag
           .label= "A+ #{bank.a_positive}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.a_positive, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.a_positive, 10].max}
 
         .blood_bag
           .label= "B+ #{bank.b_negative}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.b_positive, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.b_negative, 10].max}
 
         .blood_bag
           .label= "AB+ #{bank.ab_positive}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.ab_positive, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.ab_positive, 10].max}
 
         .blood_bag
           .label= "AB- #{bank.ab_negative}%"
           .ui-progress-bar.ui-container
-            .ui-progress{:style => "width:#{[bank.ab_negative, 5].max}%"}
+            .ui-progress{"data-progress" => [bank.ab_negative, 10].max}
