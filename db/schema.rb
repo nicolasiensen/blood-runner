@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128033041) do
+ActiveRecord::Schema.define(:version => 20111202234540) do
+
+  create_table "authorizations", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "banks", :force => true do |t|
     t.string   "name"
@@ -23,6 +31,12 @@ ActiveRecord::Schema.define(:version => 20111128033041) do
     t.integer  "b_positive",  :default => 0
     t.integer  "ab_negative", :default => 0
     t.integer  "ab_positive", :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

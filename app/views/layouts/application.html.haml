@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title BloodRunner
+    = stylesheet_link_tag "ui.progress-bar.css"
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "grid"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Special+Elite"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Varela+Round"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #header
+      .container_12
+        .grid_12
+          - if signed_in?
+            Olá
+            = current_user.name
+          - else
+            = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
+    = yield

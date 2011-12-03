@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'haml'
 gem "compass"
+gem "omniauth"
 
 # Use unicorn as the web server
 # gem 'unicorn'

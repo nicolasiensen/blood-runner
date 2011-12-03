@@ -1,13 +1,19 @@
 @import compass
+@import "compass/reset"
 
 $red: #660000
 $brown: #662E00
 $purple: #52002E
 $green: #005200
+$fb_blue: #3b5998
 
 body
   background: asset-url("square_bg.png", image)
   font-family: 'Special Elite', cursive
+
+#header
+  +clearfix
+  padding: 20px 0
 
 .bank
   +box-shadow(black 0 0 5px)
@@ -33,7 +39,6 @@ body
   +box-shadow(inset 0px 1px 0px 0px lighten($red, 50%), inset 0px -1px 1px $red)
   background-size: 18px 18px
   border: 1px solid $red
-  //-webkit-gradient(linear, 0 0, 44 44, color-stop(0.00, rgba(255, 255, 255, 0.17)), color-stop(0.25, rgba(255, 255, 255, 0.17)), color-stop(0.26, rgba(255, 255, 255, 0)), color-stop(0.50, rgba(255, 255, 255, 0)), color-stop(0.51, rgba(255, 255, 255, 0.17)), color-stop(0.75, rgba(255, 255, 255, 0.17)), color-stop(0.76, rgba(255, 255, 255, 0)), color-stop(1.00, rgba(255, 255, 255, 0)) ), -webkit-gradient(linear, left bottom, left top, color-stop(0, #74D04C), color-stop(1, #9BDD62))
 
 .label
   float: left
@@ -43,3 +48,19 @@ body
 
 .blood_bag
   +clearfix
+
+.btn_facebook
+  +border-radius(5px)
+  +linear-gradient(color-stops(lighten($fb_blue, 25%), $fb_blue))
+  +box-shadow(#666 0 .3em .3em, inset lighten($fb_blue, 40%) 0 .3em .3em)
+  border: $fb_blue 1px solid
+  display: inline-block
+  color: white
+  padding: .5em
+  text-decoration: none
+  font-weight: bold
+  font-family: 'Varela Round', sans-serif
+  font-size: .8em
+  &:active
+    +box-shadow(#666 0 .1em .1em)
+    +translateY(.2em)
