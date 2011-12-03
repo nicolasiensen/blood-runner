@@ -5,3 +5,4 @@ tmp/
 .sass-cache/
 *.swp
 *.swo
+config/initializers/01_envars.rb
