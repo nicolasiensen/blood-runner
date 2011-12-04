@@ -71,3 +71,12 @@ Bank.create(
   :b_positive => rand * 100, 
   :ab_negative => rand * 100, 
   :ab_positive => rand * 100)
+
+BloodType.create :name => "O-"
+BloodType.create :name => "O+"
+BloodType.create :name => "A-"
+BloodType.create :name => "B-"
+BloodType.create :name => "A+"
+BloodType.create :name => "B+"
+BloodType.create :name => "AB+"
+BloodType.create :name => "AB-"

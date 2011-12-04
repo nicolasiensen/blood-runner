@@ -19,3 +19,7 @@ Bank.blueprint do
   ab_negative { 0.89 }
   ab_positive { 0.07 }
 end
+
+BloodType.blueprint do
+  name { "A+" }
+end

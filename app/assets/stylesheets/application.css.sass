@@ -14,6 +14,8 @@ body
 #header
   +clearfix
   padding: 20px 0
+  form
+    display: inline
 
 .bank
   +box-shadow(black 0 0 5px)
@@ -54,6 +56,22 @@ body
   +linear-gradient(color-stops(lighten($fb_blue, 25%), $fb_blue))
   +box-shadow(#666 0 .3em .3em, inset lighten($fb_blue, 40%) 0 .3em .3em)
   border: $fb_blue 1px solid
+  display: inline-block
+  color: white
+  padding: .5em
+  text-decoration: none
+  font-weight: bold
+  font-family: 'Varela Round', sans-serif
+  font-size: .8em
+  &:active
+    +box-shadow(#666 0 .1em .1em)
+    +translateY(.2em)
+
+.btn_red
+  +border-radius(5px)
+  +linear-gradient(color-stops(lighten($red, 25%), $red))
+  +box-shadow(#666 0 .3em .3em, inset lighten($red, 40%) 0 .3em .3em)
+  border: $red 1px solid
   display: inline-block
   color: white
   padding: .5em

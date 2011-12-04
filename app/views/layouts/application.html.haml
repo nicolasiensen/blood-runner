@@ -12,10 +12,16 @@
   %body
     #header
       .container_12
+        .grid_12= notice
         .grid_12
-          - if signed_in?
+          - if signed_in? && current_user.blood_type.nil?
             Olá
-            = current_user.name
-          - else
+            = "#{current_user.name},"
+            qual o seu tipo sanguíneo?
+            - BloodType.all.each do |type|
+              = form_for current_user do |form|
+                = form.hidden_field :blood_type_id, :value => type.id
+                = form.submit type.name, :class => "btn_red"
+          - if !signed_in?
             = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
     = yield

@@ -1,6 +1,7 @@
 BloodRunner::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create'
   resources :banks, :only => [:index]
+  resources :users, :only => [:update]
   root :to => "banks#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
