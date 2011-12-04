@@ -1,4 +1,4 @@
-Feature: take a look in the stock of the blood banks
+Feature: input my blood type
   In order to be searchable by my blood type
   As a donor
   I want to input my blood type
