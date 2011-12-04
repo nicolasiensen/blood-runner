@@ -7,6 +7,25 @@ $purple: #52002E
 $green: #005200
 $fb_blue: #3b5998
 
+@mixin btn($color)
+  +border-radius(5px)
+  +linear-gradient(color-stops(lighten($color, 25%), $color))
+  +box-shadow(gray 0 .2em .2em, inset lighten($color, 50%) 0 .2em .2em)
+  +text-shadow(black 0 -.1em .1em)
+  border: $color 1px solid
+  display: inline-block
+  color: white
+  padding: .5em
+  text-decoration: none
+  font-weight: bold
+  font-family: Arial
+  font-size: .8em
+  cursor: pointer
+  &:active
+    +box-shadow(#666 0 .1em .1em, inset lighten($color, 50%) 0 .2em .2em)
+    +translateY(.2em)
+    +linear-gradient(color-stops($color, lighten($color, 25%)))
+
 body
   background: asset-url("square_bg.png", image)
   font-family: 'Special Elite', cursive
@@ -18,7 +37,7 @@ body
     display: inline
 
 .bank
-  +box-shadow(black 0 0 5px)
+  +box-shadow(black 0 0 10px)
   +border-radius(10px)
   +clearfix
   margin-bottom: 20px
@@ -52,33 +71,7 @@ body
   +clearfix
 
 .btn_facebook
-  +border-radius(5px)
-  +linear-gradient(color-stops(lighten($fb_blue, 25%), $fb_blue))
-  +box-shadow(#666 0 .3em .3em, inset lighten($fb_blue, 40%) 0 .3em .3em)
-  border: $fb_blue 1px solid
-  display: inline-block
-  color: white
-  padding: .5em
-  text-decoration: none
-  font-weight: bold
-  font-family: 'Varela Round', sans-serif
-  font-size: .8em
-  &:active
-    +box-shadow(#666 0 .1em .1em)
-    +translateY(.2em)
+  +btn($fb_blue)
 
 .btn_red
-  +border-radius(5px)
-  +linear-gradient(color-stops(lighten($red, 25%), $red))
-  +box-shadow(#666 0 .3em .3em, inset lighten($red, 40%) 0 .3em .3em)
-  border: $red 1px solid
-  display: inline-block
-  color: white
-  padding: .5em
-  text-decoration: none
-  font-weight: bold
-  font-family: 'Varela Round', sans-serif
-  font-size: .8em
-  &:active
-    +box-shadow(#666 0 .1em .1em)
-    +translateY(.2em)
+  +btn($red)

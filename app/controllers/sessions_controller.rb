@@ -10,4 +10,9 @@ class SessionsController < ApplicationController
     self.current_user = @auth.user
     redirect_to root_path
   end
+
+  def delete
+    session[:user_id] = nil
+    redirect_to root_path
+  end
 end

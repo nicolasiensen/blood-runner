@@ -24,4 +24,6 @@
                 = form.submit type.name, :class => "btn_red"
           - if !signed_in?
             = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
+          - else
+            = link_to "Sair", "/sign_out", :method => :delete
     = yield
