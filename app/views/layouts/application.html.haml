@@ -7,25 +7,25 @@
     = stylesheet_link_tag "grid"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Special+Elite"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Varela+Round"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Bowlby+One+SC"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     #header
       .container_12
         .grid_12= notice
-        .grid_12
-          - if signed_in? && current_user.blood_type.nil?
-            Olá
-            = "#{current_user.name},"
-            qual o seu tipo sanguíneo?
-            - BloodType.all.each do |type|
-              = form_for current_user do |form|
-                = form.hidden_field :blood_type_id, :value => type.id
-                = form.submit type.name, :class => "btn_red"
-          - if !signed_in?
-            = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
-          - else
-            = link_to "Sair", "/sign_out", :method => :delete
+        /
+          .grid_12
+            - if signed_in? && current_user.blood_type.nil?
+              Olá
+              = "#{current_user.name},"
+              qual o seu tipo sanguíneo?
+              - BloodType.all.each do |type|
+                = form_for current_user do |form|
+                  = form.hidden_field :blood_type_id, :value => type.id
+                  = form.submit type.name, :class => "btn_red"
+            - else
+              = link_to "Sair", "/sign_out", :method => :delete
     = yield
     %script
       var uvOptions = {};

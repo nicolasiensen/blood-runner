@@ -1,4 +1,33 @@
 .container_12
+  .grid_8.push_2
+    #welcome
+      %h1 Bem-vindo ao Blood Runner!
+  .grid_8.push_2
+    - if signed_in?
+      %p.notice
+        Valeu
+        = "#{current_user.name}!"
+        Tomarei a liberdade de entrar em contato assim que houverem novidades!
+    %h2 O que é isso?
+    %p 
+      Pra ser sincero o Blood Runner é apenas uma idéia, mas se houver um número suficiente de interessados
+      = link_to "eu", "http://www.facebook.com/nicolas.iensen"
+      tiro ela do papel.
+    %p Existem várias pessoas por aí querendo doar sangue, e ao mesmo tempo pessoas precisando de ajuda. Só que hoje, quando precisamos de um doador, temos que enviar emails para uma lista de amigos e esperar que a notícia se espalhe.
+    %p Ok... Talvez isso até funcione, mas porque não aproveitar as redes sociais para isso (Facebook pra ser mais preciso)? Não seria legal saber quais amigos seus estão precisando de ajuda? Ou até alguém que mora perto de você? E se houver um banco de sangue carente do seu tipo sanguíneo?
+    %p Então a idéia é essa, aproximar quem deseja doar com quem precisa. Ah! E tudo que for desenvolvido será por demanda de vocês, por isso coloquei aquele botão lá embaixo para sugestões.
+    - if !signed_in?
+      %p Se você curtiu essa idéia, comece conectando a sua conta do Facebook ao Blood Runner. Assim que o projeto for evoluindo eu aviso vocês!
+      %p
+        = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
+    %h2 Tá afim de me ajudar?
+    %p 
+      Desenvolvedores e web designers também são super bem-vindos! O projeto é open source e está disponível no 
+      = raw "#{link_to("Github", "https://github.com/nicolasiensen/blood-runner")}."
+      corre lá, te familiariza com o código e vamos falando...
+    %h2 Não gostou do nome?
+    %p Pois é, na falta de um nome pro projeto botei a primeira coisa que me veio à cabeça. Mas fique a vontade para sugerir outro nome!
+
   - @banks.each do |bank|
     .grid_4
       .bank
