@@ -9,6 +9,7 @@ $fb_blue: #3b5998
 
 $purple_saturated: saturate(lighten($purple, 20%), 100%)
 $green_saturated: saturate(lighten($green, 20%), 100%)
+$red_saturated: saturate(lighten($red, 20%), 100%)
 
 @mixin btn($color)
   +border-radius(5px)
@@ -43,6 +44,9 @@ h2
 
 a
   color: $purple_saturated
+  font-weight: bold
+
+strong
   font-weight: bold
 
 #header
@@ -115,3 +119,10 @@ a
 
 .notice
   color: $green_saturated
+
+span.users_count
+  color: $red_saturated
+  font-size: 2.5em
+
+#users_count
+  margin-bottom: 20px

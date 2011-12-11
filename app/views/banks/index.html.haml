@@ -8,10 +8,19 @@
     #welcome
       %h1 Bem-vindo ao Blood Runner!
   .grid_8.push_2
+    #users_count
+      Já temos
+      %span.users_count= User.count
+      usuários registrados, quando chegar em
+      %span.users_count 50
+      eu desenvolvo a primeira funcionalidade!!!
+      - if !signed_in?
+        = link_to "Faça parte disso!", "/auth/facebook", :class => "btn_facebook"
+  .grid_8.push_2
     - if signed_in?
       %p.notice
         Valeu
-        = "#{current_user.name}!"
+        %strong= "#{current_user.name}!"
         Tomarei a liberdade de entrar em contato assim que houverem novidades!
     %h2 O que é isso?
     %p 
