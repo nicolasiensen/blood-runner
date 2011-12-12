@@ -9,11 +9,9 @@
       %h1 Bem-vindo ao Blood Runner!
   .grid_8.push_2
     #users_count
-      Já temos
+      Chegamos a
       %span.users_count= User.count
-      usuários registrados, quando chegar em
-      %span.users_count 50
-      eu desenvolvo a primeira funcionalidade!!!
+      usuários registrados!!! DIN DIN DIN DIN!!! Hora de trabalhar...
       - if !signed_in?
         = link_to "Faça parte disso!", "/auth/facebook", :class => "btn_facebook"
   .grid_8.push_2
