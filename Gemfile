@@ -8,15 +8,14 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'pg'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'coffee-rails', '~> 3.1.0'
   gem 'uglifier'
 end
 
-gem 'sass-rails', "  ~> 3.1.0"
+gem 'sass-rails', '~> 3.1.0'
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'haml'
