@@ -3,6 +3,11 @@
     .grid_8.push_2
       %h2 Conhece alguém que precisa de ajuda?
       = form_for @request do |form|
+        - if @request.errors.any?
+          #error_explanation
+            %ul
+              - @request.errors.full_messages.each do |msg|
+                %li= msg
         .grid_3.alpha Sangue que necessita
         .grid_5.omega
           - BloodType.all.each do |type|

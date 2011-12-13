@@ -231,8 +231,16 @@
 
       full_messages:
         format: "%{attribute} %{message}"
+      models:
+        request:
+          attributes:
+            blood_types:
+              blank: "(selecione pelo menos 1 tipo sanguíneo)"
+            latitude:
+              blank: "(não foi possível encontrar este endereço)"
     attributes:
       request:
-        blood_type_id: "Tipo sanguíneo"
+        blood_types: "Sangue que necessita"
         receptor: "Receptor"
         location: "Localização"
+        latitude: "Localização"

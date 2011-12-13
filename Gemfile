@@ -22,6 +22,7 @@ gem 'haml'
 gem "compass"
 gem "omniauth"
 gem "cancan"
+gem "geokit"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -40,4 +41,8 @@ group :test do
   gem 'minitest'
   gem 'cucumber-websteps'
   gem 'machinist', '>= 2.0.0.beta2'
+end
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.6"
 end

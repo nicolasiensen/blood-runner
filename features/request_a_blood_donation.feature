@@ -8,9 +8,6 @@ Feature: request a blood donation
     Given I am on the homepage
     And I follow "Entrar com o Facebook"
     And I check "A+"
-    And I check "A-"
-    And I check "O+"
-    And I check "O-"
     And I fill in "Receptor" with "Luiz Celso Vitória Calheiros"
     And I fill in "Localização" with "Hospital do Coração, Porto Alegre"
     When I press "Pedir ajuda!"
@@ -20,3 +17,40 @@ Feature: request a blood donation
   Scenario: The one where I am NOT signed in
     Given I am on the homepage
     Then I should not see "Conhece alguém que precisa de ajuda?"
+
+  @omniauth_test
+  Scenario: The one where I leave the blood types empty
+    Given I am on the homepage
+    And I follow "Entrar com o Facebook"
+    And I fill in "Receptor" with "Luiz Celso Vitória Calheiros"
+    And I fill in "Localização" with "Hospital do Coração, Porto Alegre"
+    When I press "Pedir ajuda!"
+    Then I should see "Sangue que necessita (selecione pelo menos 1 tipo sanguíneo)"
+
+  @omniauth_test
+  Scenario: The one where I leave receptor field blank
+    Given I am on the homepage
+    And I follow "Entrar com o Facebook"
+    And I check "A+"
+    And I fill in "Localização" with "Hospital do Coração, Porto Alegre"
+    When I press "Pedir ajuda!"
+    Then I should see "Receptor não pode ficar em branco"
+
+  @omniauth_test
+  Scenario: The one where I leave location field blank
+    Given I am on the homepage
+    And I follow "Entrar com o Facebook"
+    And I check "A+"
+    And I fill in "Receptor" with "Luiz Celso Vitória Calheiros"
+    When I press "Pedir ajuda!"
+    Then I should see "Localização não pode ficar em branco"
+
+  @omniauth_test
+  Scenario: The one where I type an unexisting location
+    Given I am on the homepage
+    And I follow "Entrar com o Facebook"
+    And I check "A+"
+    And I fill in "Receptor" with "Luiz Celso Vitória Calheiros"
+    And I fill in "Localização" with "xxx"
+    When I press "Pedir ajuda!"
+    Then I should see "Localização (não foi possível encontrar este endereço)"

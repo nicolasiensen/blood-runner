@@ -6,6 +6,7 @@ class RequestsController < InheritedResources::Base
   def create
     create! do |success, failure|
       success.html { redirect_to request_path(@request), :notice => "Seu pedido já está publicado. Agora compartilhe com seus amigos!" }
+      failure.html { render :action => :index }
     end
   end
 end

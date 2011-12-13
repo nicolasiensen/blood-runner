@@ -162,10 +162,20 @@ span.users_count
 #users_count
   margin-bottom: 20px
 
-body[data-controller=requests][data-action=index]
+body[data-controller=requests][data-action=index], body[data-controller=requests][data-action=create]
   #request_receptor, #request_location
-    width: 300px
+    width: 350px
   .grid_3
     text-align: right
   h2
     text-align: center
+  .grid_3, .grid_5
+    margin-bottom: 10px
+  input[type=text]
+    font-size: 1em
+
+#error_explanation
+  padding: 10px
+  background: lighten($purple, 80%)
+  border: 1px solid lighten($purple, 60%)
+  margin-bottom: 10px
