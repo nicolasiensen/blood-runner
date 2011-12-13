@@ -3,7 +3,7 @@
     .grid_8.push_2
       %h2 Conhece alguém que precisa de ajuda?
       = form_for @request do |form|
-        .grid_3.alpha Tipos sanguíneos
+        .grid_3.alpha Sangue que necessita
         .grid_5.omega
           - BloodType.all.each do |type|
             = check_box_tag "request[blood_type_ids][]", type.id, false, :id => "request_blood_type_ids_#{type.id}"

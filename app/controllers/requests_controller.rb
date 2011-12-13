@@ -1,5 +1,6 @@
 # coding: utf-8
 class RequestsController < InheritedResources::Base
+  load_and_authorize_resource
   before_filter :only => [:index] {@request = Request.new}
 
   def create

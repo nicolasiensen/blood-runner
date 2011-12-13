@@ -28,8 +28,9 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.persisted?
       can :manage, Request
+      can :manage, User, :id => user.id
     else
-      can :read, :all
+      can :index, Request
     end
   end
 end

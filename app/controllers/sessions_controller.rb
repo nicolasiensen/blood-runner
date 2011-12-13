@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_authorization_check
+
   def create
     auth = request.env['omniauth.auth']
     unless @auth = Authorization.find_from_hash(auth)
