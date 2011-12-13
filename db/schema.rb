@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204160911) do
+ActiveRecord::Schema.define(:version => 20111213001050) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -37,6 +37,22 @@ ActiveRecord::Schema.define(:version => 20111204160911) do
 
   create_table "blood_types", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blood_types_requests", :id => false, :force => true do |t|
+    t.integer  "blood_type_id"
+    t.integer  "request_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requests", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "receptor"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

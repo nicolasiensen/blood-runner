@@ -22,6 +22,7 @@ gem 'inherited_resources'
 gem 'haml'
 gem "compass"
 gem "omniauth"
+gem "cancan"
 
 # Use unicorn as the web server
 # gem 'unicorn'

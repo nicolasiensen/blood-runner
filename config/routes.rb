@@ -3,7 +3,8 @@ BloodRunner::Application.routes.draw do
   match '/sign_out', :to => 'sessions#delete'
   resources :banks, :only => [:index]
   resources :users, :only => [:update]
-  root :to => "banks#index"
+  resources :requests, :only => [:index, :create, :show]
+  root :to => "requests#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

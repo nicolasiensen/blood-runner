@@ -1,0 +1,15 @@
+.container_12
+  - if can? :create, @request
+    .grid_8.push_2
+      %h2 Conhece alguém que precisa de ajuda?
+      = form_for @request do |form|
+        .grid_3.alpha Tipos sanguíneos
+        .grid_5.omega
+          - BloodType.all.each do |type|
+            = check_box_tag "request[blood_type_ids][]", type.id, false, :id => "request_blood_type_ids_#{type.id}"
+            = label_tag "request_blood_type_ids_#{type.id}", type.name
+        .grid_3.alpha= form.label :receptor
+        .grid_5.omega= form.text_field :receptor, {:placeholder => "Ex: Nícolas Faccin Iensen"}
+        .grid_3.alpha= form.label :location
+        .grid_5.omega= form.text_field :location, {:placeholder => "Ex: Hospital Cristo Redentor, Porto Alegre"}
+        .grid_5.alpha.push_3= form.submit "Pedir ajuda!", :class => "btn_red"

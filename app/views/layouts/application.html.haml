@@ -11,30 +11,33 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     %link{:href => image_path("favicon.gif"), :rel => "icon", :type => "image/x-icon"}
-  %body
+  %body{"data-controller" => controller.controller_name, "data-action" => controller.action_name}
     #header
-      .container_12
-        .grid_12= notice
-        /
+      #title
+        .container_12
           .grid_12
-            - if signed_in? && current_user.blood_type.nil?
+            %h1 Blood Runner
+            - if signed_in?
+              = link_to "Sair", "/sign_out", :method => :delete, :class => "btn_brown"
+            - else
+              = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
+      - if notice
+        .container_12
+          .grid_12
+            #notice= notice
+      - if signed_in? && current_user.blood_type.nil?
+        .container_12
+          .grid_12
+            #type_your_blood_type
               Olá
-              = "#{current_user.name},"
+              %strong= "#{current_user.name},"
               qual o seu tipo sanguíneo?
+              %br
               - BloodType.all.each do |type|
                 = form_for current_user do |form|
                   = form.hidden_field :blood_type_id, :value => type.id
                   = form.submit type.name, :class => "btn_red"
-            - else
-              = link_to "Sair", "/sign_out", :method => :delete
     = yield
-    %script
-      var uvOptions = {};
-      (function() {
-      var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-      uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/4IBCDScneKDXajFq5uf20Q.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-      })();
   #fb-root
   :javascript
     (function(d, s, id) {
@@ -54,4 +57,11 @@
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  :javascript
+    var uvOptions = {};
+    (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/4IBCDScneKDXajFq5uf20Q.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
     })();
