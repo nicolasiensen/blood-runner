@@ -18,3 +18,17 @@
         .grid_3.alpha= form.label :location
         .grid_5.omega= form.text_field :location, {:placeholder => "Ex: Av. Independência, 155, Porto Alegre"}
         .grid_5.alpha.push_3= form.submit "Pedir ajuda!", :class => "btn_red"
+    
+    .grid_8.push_2
+      %h2 O que é isso?
+      %p 
+        Pra ser sincero o Blood Runner é apenas uma idéia, mas se houver um número suficiente de interessados
+        = link_to "eu", "http://www.facebook.com/nicolas.iensen"
+        tiro ela do papel.
+      %p Existem várias pessoas por aí querendo doar sangue, e ao mesmo tempo pessoas precisando de ajuda. Só que hoje, quando precisamos de um doador, temos que enviar emails para uma lista de amigos e esperar que a notícia se espalhe.
+      %p Ok... Talvez isso até funcione, mas porque não aproveitar as redes sociais para isso? Não seria legal saber quais amigos seus estão precisando de ajuda? Ou até alguém que mora perto de você? E se houver um banco de sangue carente do seu tipo sanguíneo?
+      %p Então a idéia é essa, aproximar quem deseja doar com quem precisa. Ah! E tudo que for desenvolvido será por demanda de vocês, por isso coloquei aquele botão lá embaixo para sugestões.
+      - if !signed_in?
+        %p Se você curtiu essa idéia, comece conectando a sua conta do Facebook ao Blood Runner. Assim que o projeto for evoluindo eu aviso vocês!
+        %p
+          = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"

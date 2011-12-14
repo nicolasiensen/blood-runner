@@ -1,0 +1,25 @@
+.container_12
+  .grid_8
+    %h1
+      %strong= @request.receptor
+      precisa de ajuda!
+    = gmaps(:markers => {:data => @json},
+            :map_options => {:zoom => 15, :auto_zoom => false})
+  .grid_4
+    %p
+      Precisamos de:
+      - @request.blood_types.each do |type|
+        %span.blood_type= type.name
+    %p
+      Local:
+      = @request.location
+    %h2 Compartilhe!
+    .btn_share
+      %a.twitter-share-button{"data-lang" => "pt", "data-via" => "nicolasiensen", :href => "https://twitter.com/share"} Tweet
+    .btn_share
+      .fb-like{"data-href" => request.url, "data-send" => "false", "data-layout" => "standard", "data-width" => "300", "data-show-faces" => "true", "data-font" => "arial"}
+
+    = link_to "Conhece alguém que precisa de ajuda?", requests_path, :class => :btn_red
+
+= content_for :title do
+  = "#{@request.receptor} precisa de ajuda!"

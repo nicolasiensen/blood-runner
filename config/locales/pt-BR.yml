@@ -241,6 +241,6 @@
     attributes:
       request:
         blood_types: "Sangue que necessita"
-        receptor: "Receptor"
+        receptor: "Receptor (nome completo)"
         location: "Localização"
-        latitude: "Localização"
+        gmaps4rails_address: "Localização"

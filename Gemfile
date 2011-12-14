@@ -23,6 +23,7 @@ gem "compass"
 gem "omniauth"
 gem "cancan"
 gem "geokit"
+gem 'gmaps4rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -1,5 +1,5 @@
 class Request < ActiveRecord::Base
-  before_validation :update_geocode
+  acts_as_gmappable :validation => false
 
   belongs_to :user
 
@@ -7,9 +7,10 @@ class Request < ActiveRecord::Base
   validates_presence_of :blood_types
   validates_presence_of :receptor
   validates_presence_of :location
-  validates_presence_of :latitude
   
-  attr_accessor :location
+  def gmaps4rails_address
+    self.location
+  end
 
   private
   def update_geocode

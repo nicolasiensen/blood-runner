@@ -13,6 +13,7 @@ Feature: request a blood donation
     When I press "Pedir ajuda!"
     Then I should be on the last request page
     And I should see "Nícolas Iensen, seu pedido foi publicado. Agora compartilhe com seus amigos!"
+    And I should see "Precisamos de: A+"
   
   @omniauth_test
   Scenario: The one where I am not signed in
@@ -23,6 +24,7 @@ Feature: request a blood donation
     When I press "Pedir ajuda!"
     Then I should be on the last request page
     And I should see "Nícolas Iensen, seu pedido foi publicado. Agora compartilhe com seus amigos!"
+    And I should see "Precisamos de: A+"
 
   @omniauth_test
   Scenario: The one where I leave the blood types empty
@@ -40,7 +42,7 @@ Feature: request a blood donation
     And I check "A+"
     And I fill in "Localização" with "Hospital do Coração, Porto Alegre"
     When I press "Pedir ajuda!"
-    Then I should see "Receptor não pode ficar em branco"
+    Then I should see "Receptor (nome completo) não pode ficar em branco"
 
   @omniauth_test
   Scenario: The one where I leave location field blank
@@ -50,13 +52,3 @@ Feature: request a blood donation
     And I fill in "Receptor" with "Luiz Celso Vitória Calheiros"
     When I press "Pedir ajuda!"
     Then I should see "Localização não pode ficar em branco"
-
-  @omniauth_test
-  Scenario: The one where I type an unexisting location
-    Given I am on the homepage
-    And I follow "Entrar com o Facebook"
-    And I check "A+"
-    And I fill in "Receptor" with "Luiz Celso Vitória Calheiros"
-    And I fill in "Localização" with "xxx"
-    When I press "Pedir ajuda!"
-    Then I should see "Localização (não foi possível encontrar este endereço)"

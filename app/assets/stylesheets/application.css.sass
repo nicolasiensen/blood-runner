@@ -27,6 +27,7 @@ $red_saturated: saturate(lighten($red, 20%), 100%)
   font-size: .8em
   cursor: pointer
   margin: 0
+  text-align: center
   &:active
     +box-shadow(black 0 .1em .1em, inset lighten($color, 50%) 0 .2em .2em)
     +translateY(.2em)
@@ -47,6 +48,11 @@ body
 
 p
   margin-bottom: 2em
+
+h1
+  font-size: 3em
+  line-height: 1em
+  margin-bottom: .5em
 
 h2
   font-size: 2em
@@ -71,9 +77,11 @@ strong
     border: 1px solid $red
     color: white
     +clearfix
-    .btn_facebook, .btn_brown
+    .btn_facebook, .btn_brown, .btn_share
       float: right
       margin-top: 10px
+    .btn_share
+      margin-top: 15px
     h1
       float: left
       line-height: 1.5em
@@ -81,6 +89,7 @@ strong
       +text-shadow(black 0 -1px 1px)
       text-align: center
       font-family: 'Bowlby One SC', sans-serif
+      margin: 0
   #notice
     +notice
   #type_your_blood_type
@@ -155,6 +164,11 @@ strong
 .notice
   color: $green_saturated
 
+.map_container
+  width: 600px
+  .gmaps4rails_map
+    width: 600px
+
 span.users_count
   color: $red_saturated
   font-size: 2.5em
@@ -173,6 +187,19 @@ body[data-controller=requests][data-action=index], body[data-controller=requests
     margin-bottom: 10px
   input[type=text]
     font-size: 1em
+  .grid_8
+    margin-bottom: 20px
+
+body[data-controller=requests][data-action=show]
+  .blood_type
+    display: inline-block
+    background: lighten($red, 15%)
+    padding: 0 5px
+    color: white
+  .grid_4
+    .btn_red
+      margin-top: 20px
+      font-size: 1em
 
 #error_explanation
   padding: 10px
