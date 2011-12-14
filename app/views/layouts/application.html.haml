@@ -19,7 +19,7 @@
             = link_to root_path, :id => "logo" do
               %h1 Blood Runner
             - if signed_in?
-              = link_to "Sair", "/sign_out", :method => :delete, :class => "btn_brown"
+              = link_to "Sair", "/sign_out", :method => :delete, :class => "btn_facebook"
             - else
               = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
       - if notice
