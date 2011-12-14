@@ -70,7 +70,7 @@ strong
     display: inline
   #title
     :padding 10px 0
-    :margin-bottom 20px
+    :margin-bottom 30px
     :background $red
     +linear-gradient(color-stops($red, lighten($red, 50%)))
     +box-shadow(inset 0px 1px 0px 0px lighten($red, 50%), inset 0px -1px 1px $red, black 0 0 10px)
@@ -189,6 +189,8 @@ body[data-controller=requests][data-action=index], body[data-controller=requests
     font-size: 1em
   .grid_8
     margin-bottom: 20px
+  input[type=submit].btn_red
+    font-size: 1em
 
 body[data-controller=requests][data-action=show]
   .blood_type
