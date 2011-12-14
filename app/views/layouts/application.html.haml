@@ -24,7 +24,7 @@
             - else
               = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
             .btn_share
-              %a.twitter-share-button{"data-lang" => "pt", "data-via" => "nicolasiensen", :href => "https://twitter.com/share"} Tweet
+              %a.twitter-share-button{"data-lang" => "pt", "data-via" => "nicolasiensen", :href => "https://twitter.com/share", "data-url" => "http://blood-runner.heroku.com/"} Tweet
             .btn_share
               .fb-like{"data-href" => "http://blood-runner.heroku.com/", "data-send" => "false", "data-layout" => "button_count", "data-width" => "50", "data-show-faces" => "true", "data-font" => "arial"}
       - if notice
