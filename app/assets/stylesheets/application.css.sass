@@ -15,7 +15,7 @@ $red_saturated: saturate(lighten($red, 20%), 100%)
   +border-radius(5px)
   +linear-gradient(color-stops(lighten($color, 25%), $color))
   +box-shadow(black 0 .2em .2em, inset lighten($color, 50%) 0 .2em .2em)
-  +text-shadow(black 0 -.1em .1em)
+  +text-shadow(black 0 -1px 1px)
   border: $color 1px solid
   display: inline-block
   color: white
@@ -191,6 +191,10 @@ body[data-controller=requests][data-action=index], body[data-controller=requests
     margin-bottom: 20px
   input[type=submit].btn_red
     font-size: 1em
+  form.new_request
+    .grid_5
+      label
+        font-size: .9em
 
 body[data-controller=requests][data-action=show]
   .blood_type
