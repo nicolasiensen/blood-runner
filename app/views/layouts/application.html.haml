@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= (yield :title) || "Blood Runner é um app para aproximar quem deseja doar sangue com quem precisa"
+    %title= content_for?(:title) ? (yield :title) : "Blood Runner é um app para aproximar quem deseja doar sangue com quem precisa"
     = stylesheet_link_tag "ui.progress-bar.css"
     = stylesheet_link_tag "gmaps4rails"
     = stylesheet_link_tag "application"
