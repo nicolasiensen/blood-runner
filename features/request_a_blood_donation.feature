@@ -12,11 +12,17 @@ Feature: request a blood donation
     And I fill in "Localização" with "Hospital do Coração, Porto Alegre"
     When I press "Pedir ajuda!"
     Then I should be on the last request page
-    And I should see "Seu pedido já está publicado. Agora compartilhe com seus amigos!"
-
-  Scenario: The one where I am NOT signed in
+    And I should see "Nícolas Iensen, seu pedido foi publicado. Agora compartilhe com seus amigos!"
+  
+  @omniauth_test
+  Scenario: The one where I am not signed in
     Given I am on the homepage
-    Then I should not see "Conhece alguém que precisa de ajuda?"
+    And I check "A+"
+    And I fill in "Receptor" with "Luiz Celso Vitória Calheiros"
+    And I fill in "Localização" with "Hospital do Coração, Porto Alegre"
+    When I press "Pedir ajuda!"
+    Then I should be on the last request page
+    And I should see "Nícolas Iensen, seu pedido foi publicado. Agora compartilhe com seus amigos!"
 
   @omniauth_test
   Scenario: The one where I leave the blood types empty

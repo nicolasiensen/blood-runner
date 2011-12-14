@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_authorization_check
+  skip_before_filter :associate_user_and_question
 
   def create
     auth = request.env['omniauth.auth']

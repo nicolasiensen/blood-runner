@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :associate_user_and_question
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url
@@ -22,5 +23,14 @@ class ApplicationController < ActionController::Base
   def current_user=(user)
     @current_user = user
     session[:user_id] = user.id
+  end
+  
+  def associate_user_and_question
+    if session[:request_id]
+      request = Request.find(session[:request_id])
+      request.update_attribute :user_id, current_user.id
+      session[:request_id] = nil
+      redirect_to request, :notice => "#{current_user.name}, seu pedido foi publicado. Agora compartilhe com seus amigos!"
+    end
   end
 end

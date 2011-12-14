@@ -30,7 +30,7 @@ class Ability
       can :manage, Request
       can :manage, User, :id => user.id
     else
-      can :index, Request
+      can :manage, Request
     end
   end
 end

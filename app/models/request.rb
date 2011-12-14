@@ -1,6 +1,8 @@
 class Request < ActiveRecord::Base
   before_validation :update_geocode
 
+  belongs_to :user
+
   has_and_belongs_to_many :blood_types
   validates_presence_of :blood_types
   validates_presence_of :receptor

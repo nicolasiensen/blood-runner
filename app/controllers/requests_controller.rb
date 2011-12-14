@@ -2,11 +2,17 @@
 class RequestsController < InheritedResources::Base
   load_and_authorize_resource
   before_filter :only => [:index] {@request = Request.new}
+  before_filter :only => [:create] {if signed_in? then params[:request][:user_id] = current_user.id end}
 
   def create
     create! do |success, failure|
-      success.html { redirect_to request_path(@request), :notice => "Seu pedido já está publicado. Agora compartilhe com seus amigos!" }
-      failure.html { render :action => :index }
+      if @request.user
+        success.html { redirect_to request_path(@request), :notice => "#{current_user.name}, seu pedido foi publicado. Agora compartilhe com seus amigos!" }
+        failure.html { render :action => :index }
+      else
+        success.html { session[:request_id] = @request.id; redirect_to "/auth/facebook"; }
+        failure.html { render :action => :index }
+      end
     end
   end
 end

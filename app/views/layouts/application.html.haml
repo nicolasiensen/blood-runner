@@ -16,7 +16,8 @@
       #title
         .container_12
           .grid_12
-            %h1 Blood Runner
+            = link_to root_path, :id => "logo" do
+              %h1 Blood Runner
             - if signed_in?
               = link_to "Sair", "/sign_out", :method => :delete, :class => "btn_brown"
             - else
