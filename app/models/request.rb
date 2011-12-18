@@ -1,4 +1,6 @@
 class Request < ActiveRecord::Base
+  include ActionView::Helpers::UrlHelper
+
   acts_as_gmappable :validation => false
 
   belongs_to :user

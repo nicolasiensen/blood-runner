@@ -13,7 +13,7 @@ Feature: request a blood donation
     When I press "Pedir ajuda!"
     Then I should be on the last request page
     And I should see "Nícolas Iensen, seu pedido foi publicado. Agora compartilhe com seus amigos!"
-    And I should see "Precisamos de: A+"
+    And I should see "Precisa de: A+"
   
   @omniauth_test
   Scenario: The one where I am not signed in
@@ -24,7 +24,7 @@ Feature: request a blood donation
     When I press "Pedir ajuda!"
     Then I should be on the last request page
     And I should see "Nícolas Iensen, seu pedido foi publicado. Agora compartilhe com seus amigos!"
-    And I should see "Precisamos de: A+"
+    And I should see "Precisa de: A+"
 
   @omniauth_test
   Scenario: The one where I leave the blood types empty

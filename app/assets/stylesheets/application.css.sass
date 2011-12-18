@@ -65,6 +65,11 @@ a
 strong
   font-weight: bold
 
+hr
+  margin: 40px 0
+  border: none
+  border-bottom: dashed 2px $brown
+
 #header
   form
     display: inline
@@ -164,10 +169,11 @@ strong
 .notice
   color: $green_saturated
 
-.map_container
-  width: 600px
-  .gmaps4rails_map
-    width: 600px
+.blood_type
+  display: inline-block
+  background: lighten($red, 15%)
+  padding: 0 5px
+  color: white
 
 span.users_count
   color: $red_saturated
@@ -187,25 +193,29 @@ body[data-controller=requests][data-action=index], body[data-controller=requests
     margin-bottom: 10px
   input[type=text]
     font-size: 1em
-  .grid_8
-    margin-bottom: 20px
   input[type=submit].btn_red
     font-size: 1em
   form.new_request
     .grid_5
       label
         font-size: .9em
+  .map_container
+    width: 940px - 14px
+    .gmaps4rails_map
+      width: 940px - 14px
+    .infowindow
+      p
+        margin-bottom: 5px
 
 body[data-controller=requests][data-action=show]
-  .blood_type
-    display: inline-block
-    background: lighten($red, 15%)
-    padding: 0 5px
-    color: white
   .grid_4
     .btn_red
       margin-top: 20px
       font-size: 1em
+  .map_container
+    width: 600px
+    .gmaps4rails_map
+      width: 600px
 
 #error_explanation
   padding: 10px

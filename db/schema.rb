@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111214135204) do
+ActiveRecord::Schema.define(:version => 20111218141057) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20111214135204) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "blood_type_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

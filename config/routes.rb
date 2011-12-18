@@ -1,6 +1,7 @@
 BloodRunner::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/sign_out', :to => 'sessions#delete'
+  match '/position', :to => 'sessions#position'
   resources :banks, :only => [:index]
   resources :users, :only => [:update]
   resources :requests, :only => [:index, :create, :show]

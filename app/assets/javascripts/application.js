@@ -12,3 +12,9 @@
 //= require gmaps4rails/mapquest.js
 //= require gmaps4rails/openlayers.js
 //= require gmaps4rails/all_apis.js
+
+function sendPosition(position) {
+  $.post("/position", {latitude: position.coords.latitude, longitude: position.coords.longitude}, function(data) {
+    location.reload(true);
+  });
+};

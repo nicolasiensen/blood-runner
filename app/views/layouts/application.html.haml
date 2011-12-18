@@ -76,3 +76,6 @@
     uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/4IBCDScneKDXajFq5uf20Q.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
     })();
+  - if session[:ll].nil?
+    :javascript
+      navigator.geolocation.getCurrentPosition(sendPosition);

@@ -18,4 +18,9 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path
   end
+
+  def position
+    if signed_in? then current_user.update_attributes(:latitude => params[:latitude], :longitude => params[:longitude]) end
+    session[:ll] = [params[:latitude], params[:longitude]]
+  end
 end

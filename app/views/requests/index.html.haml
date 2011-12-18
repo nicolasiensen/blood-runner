@@ -1,4 +1,8 @@
 .container_12
+  .grid_12
+    %h2 Ajude alguém que esteja por perto...
+    = gmaps(:markers => {:data => @json}, :map_options => {:center_on_user => true, :zoom => 12, :auto_adjust => false})
+    %hr
   - if can? :create, @request
     .grid_8.push_2
       %h2 Conhece alguém que precisa de ajuda?
@@ -19,7 +23,7 @@
         .grid_5.omega= form.text_field :location, {:placeholder => "Ex: Hospital Santa Casa, Porto Alegre"}
         .grid_5.alpha.push_3= form.submit "Pedir ajuda!", :class => "btn_red"
     
-    .grid_8.push_2
+    .grid_12
       %hr
     .grid_8.push_2
       %h2 O que é isso?

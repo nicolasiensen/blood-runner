@@ -1,0 +1,8 @@
+.infowindow
+  %p
+    %strong= link_to request.receptor, request_path(request)
+  %p
+    Precisa de:
+    %br
+    - request.blood_types.each do |type|
+      %span.blood_type= type.name

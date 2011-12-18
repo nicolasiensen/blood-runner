@@ -2,6 +2,13 @@
 class RequestsController < InheritedResources::Base
   load_and_authorize_resource
   before_filter :only => [:index] {@request = Request.new}
+
+  before_filter :only => [:index] do
+    @json = Request.all.to_gmaps4rails do |request, marker|
+      marker.infowindow render_to_string(:partial => "infowindow", :locals => {:request => request}).gsub(/\n/, '').gsub(/"/, '\"')
+    end
+  end
+
   before_filter :only => [:create] {if signed_in? then params[:request][:user_id] = current_user.id end}
   before_filter :only => [:show] {@json = Request.find(params[:id]).to_gmaps4rails}
 
