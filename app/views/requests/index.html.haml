@@ -1,7 +1,7 @@
 .container_12
   .grid_12
     %h2 Ajude alguém que esteja por perto...
-    = gmaps(:markers => {:data => @json}, :map_options => {:center_on_user => true, :zoom => 12, :auto_adjust => false})
+    = gmaps(:markers => {:data => @json})
     %hr
   - if can? :create, @request
     .grid_8.push_2
