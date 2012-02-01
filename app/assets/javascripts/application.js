@@ -15,6 +15,6 @@
 
 function sendPosition(position) {
   $.post("/position", {latitude: position.coords.latitude, longitude: position.coords.longitude}, function(data) {
-    location.reload(true);
+    //location.reload(true);
   });
 };
