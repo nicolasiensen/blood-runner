@@ -4,7 +4,7 @@ class RequestsController < InheritedResources::Base
   before_filter :only => [:index] {@request = Request.new}
 
   before_filter :only => [:index] do
-    @json = Request.all.to_gmaps4rails do |request, marker|
+    @json = Request.where("created_at > ?", Date.today - 1.month).to_gmaps4rails do |request, marker|
       marker.infowindow render_to_string(:partial => "infowindow", :locals => {:request => request}).gsub(/\n/, '').gsub(/"/, '\"')
     end
   end
