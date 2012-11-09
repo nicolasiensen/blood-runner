@@ -82,11 +82,9 @@ hr
     border: 1px solid $red
     color: white
     +clearfix
-    .btn_facebook, .btn_brown, .btn_share
+    .btn_facebook, .btn_brown
       float: right
       margin-top: 10px
-    .btn_share
-      margin-top: 15px
     h1
       float: left
       line-height: 1.5em
@@ -101,6 +99,8 @@ hr
     +notice
     .btn_red
       width: 50px
+  .btn_share
+    margin-bottom: .25em
 
 #welcome
   +linear-gradient(color-stops($red, lighten($red, 50%)))

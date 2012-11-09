@@ -13,6 +13,14 @@
     = csrf_meta_tags
     %meta{:content => "http://blood-runner.heroku.com/assets/blood_runner.png", :property => "og:image"}
     %link{:href => image_path("favicon.gif"), :rel => "icon", :type => "image/x-icon"}
+    :javascript
+      (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+      })();
   %body{"data-controller" => controller.controller_name, "data-action" => controller.action_name}
     = image_tag("blood_runner.png", :style => "display:none")
     #header
@@ -25,14 +33,18 @@
               = link_to "Sair", "/sign_out", :method => :delete, :class => "btn_facebook"
             - else
               = link_to "Entrar com o Facebook", "/auth/facebook", :class => "btn_facebook"
-            .btn_share
-              %a.twitter-share-button{"data-lang" => "pt", "data-url" => "http://blood-runner.heroku.com/", :href => "https://twitter.com/share"} Tweet
-            .btn_share
-              .fb-like{"data-href" => "http://blood-runner.heroku.com/", "data-send" => "false", "data-layout" => "button_count", "data-width" => "50", "data-show-faces" => "true", "data-font" => "arial"}
       - if notice
         .container_12
           .grid_12
             #notice= notice
+      .container_12
+        .grid_12
+          .btn_share
+            %a.twitter-share-button{"data-lang" => "pt", "data-url" => "http://blood-runner.heroku.com/", :href => "https://twitter.com/share"} Tweet
+          .btn_share
+            .fb-like{"data-href" => "http://blood-runner.heroku.com/", "data-send" => "false", "data-layout" => "button_count", "data-width" => "50", "data-show-faces" => "true", "data-font" => "arial"}
+          .btn_share
+            %a.FlattrButton{:style => "display:none;", :rev => "flattr;button:compact;", :href => "http://blood-runner.heroku.com/"}
       - if signed_in? && current_user.blood_type.nil?
         .container_12
           .grid_12
@@ -46,8 +58,6 @@
                   = form.hidden_field :blood_type_id, :value => type.id
                   = form.submit type.name, :class => "btn_red"
     = yield
-    %a{:href => "https://github.com/nicolasiensen/blood-runner"}
-      %img{:alt => "Fork me on GitHub", :src => "https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67", :style => "position: absolute; top: 0; right: 0; border: 0;"}
   = yield :scripts
   #fb-root
   :javascript
